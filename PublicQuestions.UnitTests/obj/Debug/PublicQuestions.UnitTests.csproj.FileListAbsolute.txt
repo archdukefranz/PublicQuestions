@@ -1,0 +1,9 @@
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.UnitTests.dll
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.UnitTests.pdb
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\log4net.dll
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\NMock2.dll
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\nunit.framework.dll
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\PublicQuestions.UnitTests.dll
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\PublicQuestions.UnitTests.pdb
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.UnitTests.dll.config

@@ -1,0 +1,5 @@
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Model\bin\Debug\PublicQuestions.Model.dll
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Model\bin\Debug\PublicQuestions.Model.pdb
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Model\obj\Debug\PublicQuestions.Model.dll
+C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Model\obj\Debug\PublicQuestions.Model.pdb
