@@ -4,14 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Raven.Client.Document;
+using System.Configuration;
+using Raven.Client;
 
 namespace PublicQuestions
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-    // visit http://go.microsoft.com/?LinkId=9394801
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        private const string RavenSessionKey = "RavenMVC.Session";
+        private static DocumentStore documentStore;
+
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -26,9 +30,36 @@ namespace PublicQuestions
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
 
+            //Create a DocumentStore in Application_Start
+            //DocumentStore should be created once per application and stored as a singleton.
+            documentStore = new DocumentStore { Url =  ConfigurationManager.AppSettings["dataURL"] };
+            documentStore.Initialize();            
+            AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        public MvcApplication()
+        {
+
+            //Create a DocumentSession on BeginRequest   
+            //create a document session for every unit of work
+            BeginRequest += (sender, args) =>
+                HttpContext.Current.Items[RavenSessionKey] = documentStore.OpenSession();
+
+            //Destroy the DocumentSession on EndRequest
+            EndRequest += (o, eventArgs) =>
+            {
+                var disposable = HttpContext.Current.Items[RavenSessionKey] as IDisposable;
+                if (disposable != null)
+                    disposable.Dispose();
+            };
+        }
+
+        //Getting the current DocumentSession
+        public static IDocumentSession CurrentSession
+        {
+            get { return (IDocumentSession)HttpContext.Current.Items[RavenSessionKey]; }
         }
     }
 }
