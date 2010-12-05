@@ -6,11 +6,3 @@ C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Database\sql\debu
 C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database.deploymanifest
 C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database.dbschema
 C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.Database\obj\Debug\PublicQuestions.Database.dbschema
-C:\Development\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database_Script.PreDeployment.sql
-C:\Development\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database_Script.PostDeployment.sql
-C:\Development\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database_Database.sqlsettings
-C:\Development\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database_Database.sqldeployment
-C:\Development\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database_Database.sqlcmdvars
-C:\Development\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database.deploymanifest
-C:\Development\PublicQuestions\PublicQuestions.Database\sql\debug\PublicQuestions.Database.dbschema
-C:\Development\PublicQuestions\PublicQuestions.Database\obj\Debug\PublicQuestions.Database.dbschema

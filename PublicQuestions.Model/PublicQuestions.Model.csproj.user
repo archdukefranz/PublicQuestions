@@ -3,4 +3,7 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>C:\Development\PublicQuestions\Lib\;C:\Development\PublicQuestions-AddIns\NUnit-2.5.8\bin\net-2.0\framework\;C:\Development\PublicQuestions-AddIns\ravenDB\Client\</ReferencePath>
+  </PropertyGroup>
 </Project>

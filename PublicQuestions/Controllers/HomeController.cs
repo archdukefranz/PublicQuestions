@@ -19,12 +19,10 @@ namespace PublicQuestions.Controllers
 
         public ActionResult Index()
         {
-            ViewData["Message"] = "Welcome to ASP.NET MVC!";
-            var categories = messageRepository.GetMessages();
-            if (categories == null)
-                return RedirectToAction("Create");
-            ViewData["Messages"] = categories;
-            return View(categories);
+            ViewData["Message"] = "Public Questions!";
+            var message = messageRepository.GetMessages();
+            ViewData["Messages"] = message;
+            return View(message);
         }
 
         public ActionResult About()

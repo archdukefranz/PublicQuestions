@@ -42,10 +42,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Unity\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Raven.Abstractions">
+    <Reference Include="Raven.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Raven.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Raven.Client.Lightweight">
+    <Reference Include="Raven.Client.Lightweight, Version=1.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Raven.Client.Lightweight.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -69,6 +71,8 @@
     <Compile Include="AccountModels.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Connection\IAccountRepository.cs" />
+    <Compile Include="Connection\AccountRepository.cs" />
     <Compile Include="Connection\IMessageRepository.cs" />
     <Compile Include="Connection\MessageRepository.cs" />
     <Compile Include="Extenstions\UnityContainerExtensions.cs" />
