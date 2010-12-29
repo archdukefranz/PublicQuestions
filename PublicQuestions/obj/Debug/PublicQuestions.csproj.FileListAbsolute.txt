@@ -10,12 +10,9 @@ C:\Development\PublicQuestions\PublicQuestions\bin\PublicQuestions.pdb
 C:\Development\PublicQuestions\PublicQuestions\obj\Debug\ResolveAssemblyReference.cache
 C:\Development\PublicQuestions\PublicQuestions\obj\Debug\PublicQuestions.dll
 C:\Development\PublicQuestions\PublicQuestions\obj\Debug\PublicQuestions.pdb
-C:\Development\PublicQuestions\PublicQuestions\bin\MvcContrib.dll
 C:\Development\PublicQuestions\PublicQuestions\bin\PublicQuestions.Model.dll
-C:\Development\PublicQuestions\PublicQuestions\bin\Raven.Client.Lightweight.dll
-C:\Development\PublicQuestions\PublicQuestions\bin\log4net.dll
-C:\Development\PublicQuestions\PublicQuestions\bin\Microsoft.Practices.Unity.dll
 C:\Development\PublicQuestions\PublicQuestions\bin\Newtonsoft.Json.dll
 C:\Development\PublicQuestions\PublicQuestions\bin\Raven.Abstractions.dll
-C:\Development\PublicQuestions\PublicQuestions\bin\Microsoft.Practices.ObjectBuilder2.dll
 C:\Development\PublicQuestions\PublicQuestions\bin\PublicQuestions.Model.pdb
+C:\Development\PublicQuestions\PublicQuestions\bin\Raven.Client.Lightweight.xml
+C:\Development\PublicQuestions\PublicQuestions\bin\MvcContrib.dll

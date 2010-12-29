@@ -12,6 +12,7 @@
     <AssemblyName>PublicQuestions.Model</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,20 +69,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountModels.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Connection\IAccountRepository.cs" />
-    <Compile Include="Connection\AccountRepository.cs" />
-    <Compile Include="Connection\IMessageRepository.cs" />
-    <Compile Include="Connection\MessageRepository.cs" />
-    <Compile Include="Extenstions\UnityContainerExtensions.cs" />
-    <Compile Include="Message.cs" />
-    <Compile Include="MessageAttributes.cs" />
-    <Compile Include="MessageMetaData.cs" />
+    <Compile Include="Questions\Attributes.cs" />
+    <Compile Include="Questions\MetaData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questions\Question.cs" />
+    <Compile Include="Connections\RavenDB\QuestionRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Connections\MySql\" />
+    <Folder Include="Connections\SQLServer\" />
+    <Folder Include="Extenstions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -10,9 +10,6 @@ C:\Development\PublicQuestions\PublicQuestions\PublicQuestions.UnitTests\bin\Deb
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.UnitTests.dll.config
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.UnitTests.dll
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.UnitTests.pdb
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\ResolveAssemblyReference.cache
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\PublicQuestions.UnitTests.dll
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\PublicQuestions.UnitTests.pdb
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Microsoft.Practices.Unity.dll
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\nunit.framework.dll
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.Model.dll
@@ -20,10 +17,9 @@ C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Raven.Abstrac
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Raven.Client.Lightweight.dll
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Rhino.Mocks.dll
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Newtonsoft.Json.dll
 C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\PublicQuestions.Model.pdb
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Microsoft.Practices.Unity.pdb
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Microsoft.Practices.Unity.xml
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\nunit.framework.xml
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Rhino.Mocks.xml
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Microsoft.Practices.ObjectBuilder2.pdb
-C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Microsoft.Practices.ObjectBuilder2.xml
+C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\Raven.Client.Lightweight.xml
+C:\Development\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\PublicQuestions.UnitTests.dll
+C:\Development\PublicQuestions\PublicQuestions.UnitTests\obj\Debug\PublicQuestions.UnitTests.pdb

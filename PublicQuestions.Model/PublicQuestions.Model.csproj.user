@@ -6,4 +6,10 @@
   <PropertyGroup>
     <ReferencePath>C:\Development\PublicQuestions\Lib\;C:\Development\PublicQuestions-AddIns\NUnit-2.5.8\bin\net-2.0\framework\;C:\Development\PublicQuestions-AddIns\ravenDB\Client\</ReferencePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Development\PublicQuestions-AddIns\NUnit-2.5.8\bin\net-2.0\nunit.exe</StartProgram>
+    <StartArguments>PublicQuestions.UnitTests.dll</StartArguments>
+    <StartWorkingDirectory>C:\Development\PublicQuestions\PublicQuestions.UnitTests\bin\Debug\</StartWorkingDirectory>
+  </PropertyGroup>
 </Project>
