@@ -19,6 +19,13 @@ Testing
 -------
 From the command prompt type the following, changing the <path-to-code> to the location on your PC:
 runas /user:administrator "<path-to-code>\PublicQuestions\UnitTests_startup.bat"
+Note: To enable debuging within NUnit and Visual Studio you need to modify the nunit.exex.config
+     1) Add the following after the <Configuration> section
+	      <startup>
+			<requiredRuntime version="4.0.30319" />
+		  </startup>
+     2) Add the following after the <runtime> element
+	      <loadFromRemoteSources enabled="true" />
 
 Contributing
 ------------

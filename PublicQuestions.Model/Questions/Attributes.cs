@@ -7,8 +7,8 @@ namespace PublicQuestions.Model.Questions
 {
     public class Attributes
     {
-        public string Votes { get; set; }
-        public string Answers { get; set; }
-        public string Views { get; set; }
+        public int Votes { get; set; }
+        public int Answers { get; set; }
+        public int Views { get; set; }
     }
 }

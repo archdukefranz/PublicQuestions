@@ -16,6 +16,8 @@ namespace PublicQuestions.UnitTests
     [TestFixture]
     public class SearchQuestions
     {
+        private static readonly log4net.ILog _log = log4net.LogManager.GetLogger(System.Reflection.MethodInfo.GetCurrentMethod().DeclaringType);
+
         MockRepository _mocks = new MockRepository();
         IDocumentSession _session = null;
         IRavenQueryable<Question> _mockQueryResults = null;
@@ -23,6 +25,13 @@ namespace PublicQuestions.UnitTests
         private Question[] _mockrecords = new Question[2]; // Array of results
 
         [TestFixtureSetUp]
+        public void FixtureSetup()
+        {
+            log4net.Config.XmlConfigurator.Configure();
+            _log.Info("Starting up for testing");
+        }
+
+        [SetUp]
         public void Setup()
         {
             _mockrecord = new Question() { Id = 2, Name = "Mock User", Body = "Mock body", EMail = "mock.user@gmail.com", Posted = DateTime.Now, Title = "Title" };
@@ -32,11 +41,16 @@ namespace PublicQuestions.UnitTests
 
         [TestFixtureTearDown]
         public void ShutDown()
-        { 
-        
+        {
+            _log.Info("Shutting down the tests");
         }
 
+        /// <summary>
+        /// Search for question and find one.
+        /// </summary>
+        /// <param name="Id">The id.</param>
         [Test(Description = "Search for a question in the database")]
+        [TestCase(1, Description = "Simple search for one record")]
         [TestCase(2, Description = "Simple search for one record")]
         public void Model_Questions_SearchForQuestion(int Id)
         {
@@ -46,6 +60,7 @@ namespace PublicQuestions.UnitTests
                     .IgnoreArguments()
                     .Return(_mockrecord); 
             }
+            _mocks.ReplayAll();
 
             using (_mocks.Playback())
             {
@@ -55,8 +70,13 @@ namespace PublicQuestions.UnitTests
                 Assert.IsTrue(question.Title == _mockrecord.Title, "Question Title should have been {0} but was {1}!", _mockrecord.Title, question.Title);
                 Assert.IsTrue(question.Id == _mockrecord.Id, "Question Title should have been {0} but was {1}!", _mockrecord.Title, question.Title);
             }
+            _mocks.VerifyAll();
         }
 
+        /// <summary>
+        /// Search for questionbut find none.
+        /// </summary>
+        /// <param name="Id">The id of the question</param>
         [Test(Description = "Search for a question by Id but find nothing")]
         [TestCase(3, Description = "Simple search for one record, but exepct nothing")]
         public void Model_Questions_SearchForQuestionbutFindNone(int Id)
@@ -67,6 +87,7 @@ namespace PublicQuestions.UnitTests
                     .IgnoreArguments()
                     .Return(null);
             }
+            _mocks.ReplayAll();
 
             using (_mocks.Playback())
             {
@@ -74,14 +95,17 @@ namespace PublicQuestions.UnitTests
                 Question question = questionRepository.GetQuestion(Id);
                 Assert.IsTrue(question == null, "Question should not have been found!");
             }
+            _mocks.VerifyAll();
         }
 
+        /// <summary>
+        /// Search for all question and ensure they are returned.
+        /// </summary>
         [Test(Description = "Search for all question")]
         public void Model_Questions_SearchForAllQuestion()
         {
             using (_mocks.Record())
             {
-                IRavenQueryable<Question> stub = MockRepository.GenerateStub<IRavenQueryable<Question>>();
                 MockResults mockResults = new MockResults();
                 var result = (from q in _mockrecords select q);
                 mockResults.Query = (from q in _mockrecords select q).AsQueryable<Question>();
@@ -97,10 +121,52 @@ namespace PublicQuestions.UnitTests
                 IRavenQueryable<Question> questions = questionRepository.GetQuestions();
                 Assert.IsTrue(questions.Count() == _mockrecords.Count(), "Count of questions do not match!");
             }
+            _mocks.VerifyAll();
+        }
+
+        [Test(Description = "View a question, counter should increase")]
+        public void Model_Questions_ViewAnswerVoteQuestion()
+        {
+            using (_mocks.Record())
+            {
+                Expect.Call(_session.Load<Question>("1"))
+                    .IgnoreArguments()
+                    .Return(_mockrecord);
+                Expect.Call(delegate{ _session.Store(_mockrecord); })
+                    .IgnoreArguments()
+                    .Repeat.Times(3);
+                Expect.Call(delegate { _session.SaveChanges(); })
+                    .IgnoreArguments()
+                    .Repeat.Times(3);
+            }
             _mocks.ReplayAll();
+
+            using (_mocks.Playback())
+            {
+                QuestionRepository questionRepository = new QuestionRepository(_session);
+                Question question = questionRepository.GetQuestion(1);
+                int previousView = question.Attributes.Views;
+                int previousVotes = question.Attributes.Votes;
+                int previousAnswers = question.Attributes.Answers;
+                question.View();
+                Assert.IsTrue(question.Attributes.Views == (previousView + 1), "the count of views is incorrect!");
+                question.Answer(Answer);
+                Assert.IsTrue(question.Attributes.Views == (previousAnswers + 1), "the count of answers is incorrect!");
+                question.Vote(Answer);
+                Assert.IsTrue(question.Attributes.Vote == (previousVotes + 1), "the count of answers is incorrect!");
+
+                questionRepository.Save(question);
+            
+            }
+            _mocks.VerifyAll();
         }
 
 
+        #region - Private classes -
+
+        /// <summary>
+        /// Mock class to allow for control of the results
+        /// </summary>
         private class MockResults : IRavenQueryable<Question>
         {
             public IQueryable<Question> Query { get; set; }
@@ -126,5 +192,6 @@ namespace PublicQuestions.UnitTests
             {   get { return Query.Provider; }  }
         }
 
+        #endregion
     }
 }
